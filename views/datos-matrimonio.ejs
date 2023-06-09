@@ -1,0 +1,122 @@
+<section>
+  <h2>Datos del matrimonio</h2>
+  <ul>
+    <li>
+      <input type="text" name="tramite-sobre" id="tramite-sobre" />
+      <label for="tramite-sobre">Sobre</label>
+    </li>
+    <li>
+      <input type="text" name="domicilio-legal" id="domicilio-legal" />
+      <label for="domicilio-legal">Domicilio legal</label>
+    </li>
+  </ul>
+  <div>
+    <h3>Ultimo domicilio conyugal</h3>
+    <ul>
+      <li>
+        <input type="text" name="udc-direccion" id="udc-direccion" />
+        <label for="udc-direccion">Calle, Numero, Piso, Depto.</label>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <input type="text" name="udc-localidad" id="udc-localidad" />
+        <label for="udc-localidad">Localidad</label>
+      </li>
+      <li>
+        <input type="text" name="udc-partido" id="udc-partido" />
+        <label for="udc-partido">Partido</label>
+      </li>
+      <li>
+        <input type="text" name="udc-provincia" id="udc-provincia" />
+        <label for="udc-provincia">Provincia</label>
+      </li>
+    </ul>
+  </div>
+  <ul>
+    <li>
+      <input type="date" name="fecha-matrimonio" id="fecha-matrimonio" />
+      <label for="fecha-matrimonio">Fecha de matrimonio</label>
+    </li>
+    <li>
+      <input type="date" name="separacion-hecho" id="separacion-hecho" />
+      <label for="separacion-hecho">Separacion de hecho</label>
+    </li>
+    <li>
+      <input type="text" name="registro-civil" id="registro-civil" />
+      <label for="registro-civil">Registro civil</label>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <input type="text" name="acta" id="acta" />
+      <label for="acta">Acta</label>
+    </li>
+    <li>
+      <input type="text" name="tomo" id="tomo" />
+      <label for="tomo">Tomo</label>
+    </li>
+    <li>
+      <input type="text" name="folio" id="folio" />
+      <label for="folio">Folio</label>
+    </li>
+    <li>
+      <input type="text" name="anio" id="anio" />
+      <label for="anio">Año</label>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <select name="prueba" id="prueba">
+        <option value="pda" selected>Partida de matrimonio</option>
+        <option value="certificado">Certificado de matrimonio</option>
+        <option value="libreta">Libreta de familia</option>
+      </select>
+      <label for="prueba">Prueba</label>
+    </li>
+    <li>
+      <select name="depto-judicial" id="depto-judicial">
+        <option value="op1" selected>Muchas opciones</option>
+        <option value="certificado">Escribir despues</option>
+        <option value="libreta">Sino me muero</option>
+      </select>
+      <label for="depto-judicial">Departamento Judicial</label>
+    </li>
+  </ul>
+  <ul>
+    <li>
+      <h3>Conyuge firma</h3>
+      <input
+        type="radio"
+        name="conyuge-firma"
+        id="conyuge-si-firma"
+        value="1"
+      />
+      <label for="conyuge-si-firma">Si</label>
+      <input
+        type="radio"
+        name="conyuge-firma"
+        id="conyuge-no-firma"
+        value="0"
+      />
+      <label for="conyuge-no-firma">No</label>
+      <input
+        type="radio"
+        name="conyuge-firma"
+        id="conyuge-ns-firma"
+        value="-1"
+      />
+      <label for="conyuge-ns-firma">N/S</label>
+    </li>
+    <li>
+      <h3>Radicacion</h3>
+      <input
+        type="radio"
+        name="radicacion"
+        id="primer-radicacion"
+        value="primer-radicacion"
+      />
+      <label for="primer-radicacion">Primer radicacion</label>
+    </li>
+  </ul>
+</section>

@@ -1,6 +1,6 @@
 <section>
   <h2>Comprobante de pago</h2>
-  <ul>
+  <ul class="vertical-text">
     <li>
       <select name="comprobante-motivo" id="comprobante-motivo">
         <option value="consulta">Consulta</option>
@@ -15,46 +15,46 @@
       <label for="comprobante-importe">Importe</label>
     </li>
     <li>
-        <li>
+        <div>
           <input type="text" name="comprobante-caratula" id="comprobante-caratula">
           <label for="comprobante-caratula">Caratula</label>
-        </li>
-        <li>
+        </div>
+        <div>
           <input type="text" name="comprobante-nombre" id="comprobante-nombre">
           <label for="comprobante-nombre">Nombre</label>
-        </li>
+        </div>
     </li>
-    <li>
-        <li>
+    <li class="input-container">
+        <div>
           <input type="date" name="comprobante-fecha" id="comprobante-fecha">
           <label for="comprobante-fecha">Fecha</label>
-        </li>
-        <li>
+        </div>
+        <div>
           <select name="oficina-cliente" id="oficina-cliente">
             <option value="sanjusto">San Justo</option>
             <option value="moron">Moron</option>
             <option value="sanmiguel">San Miguel</option>
           </select>
           <label for="oficina-cliente">Oficina Cliente</label>
-        </li>
-        <li>
+        </div>
+        <div>
           <select name="origen-cliente" id="origen-cliente">
             <option value="origen1">Primer origen</option>
             <option value="origen2">Segundo origen</option>
           </select>
           <label for="origen-cliente">Origen</label>
-        </li>
-        <li>
+        </div>
+        <div>
           <input type="date" name="entrevista-fecha" id="entrevista-fecha">
           <label for="entrevista-fecha"> Fecha de entrevista</label>
-        </li>
+        </div>
     </li>
-    <li>
+    <li class="checkbox">
       <input type="checkbox" name="partes-invertidas" id="partes-invertidas">
       <label for="partes-invertidas">Partes Invertidas?</label>
     </li>
     <li>
-      <textarea name="texto-adicional" id="texto-adicional" cols="30" rows="10"></textarea>
+      <textarea name="texto-adicional" id="texto-adicional" cols="70" rows="10"></textarea>
     </li>
   </ul>
 </section>

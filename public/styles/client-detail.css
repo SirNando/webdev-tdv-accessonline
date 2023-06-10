@@ -1,57 +1,132 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 main {
-    min-width: 1300px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
+  min-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
-h2, h3, p, label {
-    font-family: sans-serif;
+h2,
+h3,
+p,
+label {
+  font-family: sans-serif;
 }
 
 h2 {
-    text-align: center;
-    margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
 }
 
 section {
-    margin: auto;
-    width: fit-content;
-    background-color: aqua;
-    padding: 1rem;
-    border-radius: 8px;
+  margin: auto;
+  width: fit-content;
+  background-color: aqua;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
-#honorarios .columns {
+input,
+textarea,
+select {
+  font-size: 1rem;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  border: 1px solid black;
+  margin: 1rem;
+  width: fit-content;
+}
+
+.radio-group h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.radio-container {
+  justify-content: center;
+}
+
+.vertical-text {
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+
+.vertical-text li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.vertical-text .triple-input {
+  width: 100%;
+}
+
+.vertical-text textarea {
+  resize: vertical;
+  font-size: 1rem;
+  min-height: 4rem;
+}
+
+.vertical-text .checkbox {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 5rem;
 }
 
-#honorarios .columns ul {
+.input-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.input-container div {
+    display: flex;
     flex-direction: column;
 }
 
+#udc {
+  border: 1px solid black;
+}
+
+#udc h3 {
+  text-align: center;
+  margin: 0;
+  margin-top: 1rem;
+}
+
+#honorarios .columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+#honorarios .columns ul {
+  flex-direction: column;
+}
+
 #honorarios .columns li {
-    padding: 0.3rem;
+  padding: 0.3rem;
 }

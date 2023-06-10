@@ -10,7 +10,7 @@
       <label for="domicilio-legal">Domicilio legal</label>
     </li>
   </ul>
-  <div>
+  <div id="udc">
     <h3>Ultimo domicilio conyugal</h3>
     <ul>
       <li>
@@ -83,40 +83,51 @@
       <label for="depto-judicial">Departamento Judicial</label>
     </li>
   </ul>
-  <ul>
-    <li>
+  <ul class="radio-container">
+    <li class="radio-group">
       <h3>Conyuge firma</h3>
-      <input
-        type="radio"
-        name="conyuge-firma"
-        id="conyuge-si-firma"
-        value="1"
-      />
-      <label for="conyuge-si-firma">Si</label>
-      <input
-        type="radio"
-        name="conyuge-firma"
-        id="conyuge-no-firma"
-        value="0"
-      />
-      <label for="conyuge-no-firma">No</label>
-      <input
-        type="radio"
-        name="conyuge-firma"
-        id="conyuge-ns-firma"
-        value="-1"
-      />
-      <label for="conyuge-ns-firma">N/S</label>
+      <div>
+        <input
+          type="radio"
+          name="conyuge-firma"
+          id="conyuge-si-firma"
+          value="1"
+        />
+        <label for="conyuge-si-firma">Si</label>
+        <input
+          type="radio"
+          name="conyuge-firma"
+          id="conyuge-no-firma"
+          value="0"
+        />
+        <label for="conyuge-no-firma">No</label>
+        <input
+          type="radio"
+          name="conyuge-firma"
+          id="conyuge-ns-firma"
+          value="-1"
+        />
+        <label for="conyuge-ns-firma">N/S</label>
+      </div>
     </li>
-    <li>
+    <li class="radio-group">
       <h3>Radicacion</h3>
-      <input
-        type="radio"
-        name="radicacion"
-        id="primer-radicacion"
-        value="primer-radicacion"
-      />
-      <label for="primer-radicacion">Primer radicacion</label>
+      <div>
+        <input
+          type="radio"
+          name="radicacion"
+          id="primer-radicacion"
+          value="primer-radicacion"
+        />
+        <label for="primer-radicacion">DOM DDA</label>
+        <input
+          type="radio"
+          name="radicacion"
+          id="segunda-radicacion"
+          value="segunda-radicacion"
+        />
+        <label for="segunda-radicacion">UDC</label>
+      </div>
     </li>
   </ul>
 </section>

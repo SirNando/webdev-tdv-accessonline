@@ -1,69 +1,90 @@
 <section>
   <h2>Escritos</h2>
-  <ul>
-    <li>
-      <input type="text" name="alimentos-text" id="alimentos-text" />
-      <label for="alimentos-text">Alimentos</label>
-      <input type="checkbox" name="alimentos-box" />
+  <ul class="vertical-text">
+    <li class="triple-input">
+      <textarea
+        name="alimentos-text"
+        id="alimentos-text"
+        cols="30"
+        rows="3"
+      ></textarea>
+      <div>
+        <label for="alimentos-text">Alimentos</label>
+        <input type="checkbox" name="alimentos-box" />
+      </div>
     </li>
-    <li>
-      <input type="text" name="comunicacion" id="comunicacion" />
-      <label for="comunicacion">Comunicacion</label>
-      <input type="checkbox" name="comunicacion-box" />
+    <li class="triple-input">
+      <textarea
+        name="comunicacion"
+        id="comunicacion"
+        cols="30"
+        rows="3"
+      ></textarea>
+      <div>
+        <label for="comunicacion">Comunicacion</label>
+        <input type="checkbox" name="comunicacion-box" />
+      </div>
     </li>
-    <li>
-      <input
-        type="text"
+    <li class="triple-input">
+      <textarea
         name="cuidado-personal-text"
         id="cuidado-personal-text"
-      />
-      <label for="cuidado-personal-text">Cuidado Personal</label>
-      <input type="checkbox" name="cuidado-personal-box" />
+        cols="90"
+        rows="3"
+      ></textarea>
+      <div>
+        <label for="cuidado-personal-text">Cuidado Personal</label>
+        <input type="checkbox" name="cuidado-personal-box" />
+      </div>
     </li>
     <li>
-      <input type="text" name="hijos-text" id="hijos-text" />
+      <textarea name="hijos-text" id="hijos-text" cols="30" rows="3"></textarea>
       <label for="hijos-text">Hijos</label>
     </li>
     <li>
-      <input type="text" name="bienes-text" id="bienes-text" />
+      <textarea name="bienes-text" id="bienes-text" cols="30" rows="3"></textarea>
       <label for="bienes-text">Bienes</label>
     </li>
-  </ul>
-  <ul>
     <li>
-      <input type="text" name="bienes-text" id="bienes-text" />
-      <label for="bienes-text">Bienes</label>
+      <textarea name="bienes-propuesta" id="bienes-propuesta" cols="30" rows="3"></textarea>
+      <label for="bienes-propuesta">Propuesta de bienes</label>
     </li>
   </ul>
-  <ul>
-    <li>
-      <input
-        type="radio"
-        name="vivienda-conyugal"
-        id="vivienda-conyugal-actor"
-        value="actor"
-      />
-      <label for="vivienda-conyugal-actor">Actor</label>
-      <input
-        type="radio"
-        name="vivienda-conyugal"
-        id="vivienda-conyugal-demandado"
-        value="demandado"
-      />
-      <label for="vivienda-conyugal">Demandado</label>
-      <input
-        type="radio"
-        name="vivienda-conyugal"
-        id="vivienda-conyugal-nc"
-        value="nc"
-      />
-      <label for="vivienda-conyugal-nc">N/C</label>
+  <ul class="radio-container">
+    <li class="radio-group">
+      <h3>Atrib. vivienda conyugal</h3>
+      <div>
+        <input
+          type="radio"
+          name="vivienda-conyugal"
+          id="vivienda-conyugal-actor"
+          value="actor"
+        />
+        <label for="vivienda-conyugal-actor">ACT</label>
+        <input
+          type="radio"
+          name="vivienda-conyugal"
+          id="vivienda-conyugal-demandado"
+          value="demandado"
+        />
+        <label for="vivienda-conyugal-demandado">DDA</label>
+        <input
+          type="radio"
+          name="vivienda-conyugal"
+          id="vivienda-conyugal-nc"
+          value="nc"
+        />
+        <label for="vivienda-conyugal-nc">N/C</label>
+      </div>
     </li>
-    <li>
-      <input type="radio" name="matricula" id="matricula-caba" value="caba" />
-      <label for="matricula-caba">CABA</label>
-      <input type="radio" name="matricula" id="matricula-pcia" value="pcia" />
-      <label for="matricula-pcia">PCIA</label>
+    <li class="radio-group">
+      <h3>Matrícula</h3>
+      <div>
+        <input type="radio" name="matricula" id="matricula-caba" value="caba" />
+        <label for="matricula-caba">CABA</label>
+        <input type="radio" name="matricula" id="matricula-pcia" value="pcia" />
+        <label for="matricula-pcia">PCIA</label>
+      </div>
     </li>
   </ul>
 </section>

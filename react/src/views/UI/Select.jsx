@@ -27,6 +27,7 @@ const Select = (props) => {
         style={selectStyles}
         controlId="floatingSelect"
         label={label}
+        className="mb-3"
       >
         <Form.Select aria-label="Floating label select example">
           <SelectOptions options={options}></SelectOptions>

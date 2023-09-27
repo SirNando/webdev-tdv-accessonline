@@ -11,16 +11,14 @@ const Input = (props) => {
   if (props.type) type = props.type;
 
   return (
-    <>
-      <FloatingLabel
-        style={inputStyles}
-        controlId="floatingInput"
-        label={label}
-        className="mb-3"
-      >
-        <Form.Control type={type} placeholder="" />
-      </FloatingLabel>
-    </>
+    <FloatingLabel
+      style={inputStyles}
+      controlId="floatingInput"
+      label={label}
+      className="mb-3"
+    >
+      <Form.Control type={type} placeholder="" />
+    </FloatingLabel>
   );
 };
 

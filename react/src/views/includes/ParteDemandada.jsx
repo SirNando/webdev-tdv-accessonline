@@ -1,5 +1,4 @@
 import Input from "../UI/Input";
-import Select from "../UI/Select";
 import Section from "../UI/Section";
 import SectionGroup from "../UI/SectionGroup";
 

@@ -1,4 +1,5 @@
 import Section from "../UI/Section";
+import SubSection from "../UI/SubSection";
 import Input from "../UI/Input";
 import SectionGroup from "../UI/SectionGroup";
 import Checkbox from "../UI/Checkbox";
@@ -30,14 +31,14 @@ const Honorarios = () => {
         <Input label="Primer vencimiento" type="date"></Input>
         <Input label="Fecha de firma" type="date"></Input>
       </SectionGroup>
-      <Section title="Partida de matrimonio">
+      <SubSection title="Partida de matrimonio">
         <SectionGroup>
           <Select options={partidaOptions} label="Con Partida"></Select>
-          <Input label="Cantidad de cuotas"></Input>
-          <Input label="Valor de cuotas"></Input>
+          <Input label="Cantidad cuotas"></Input>
+          <Input label="Valor cuotas"></Input>
           <Select options={medioDePagoOptions} label="Medio de pago"></Select>
         </SectionGroup>
-      </Section>
+      </SubSection>
     </Section>
   );
 };

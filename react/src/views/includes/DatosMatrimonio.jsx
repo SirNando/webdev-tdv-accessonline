@@ -1,4 +1,5 @@
 import Section from "../UI/Section";
+import SubSection from "../UI/SubSection";
 import SectionGroup from "../UI/SectionGroup";
 import Input from "../UI/Input";
 import Select from "../UI/Select";
@@ -35,7 +36,7 @@ const DatosDelMatrimonio = () => {
         <Input label="Sobre"></Input>
         <Select label="Domicilio Legal" options={domiciliosLegales}></Select>
       </SectionGroup>
-      <Section title="Ultimo domicilio conyugal">
+      <SubSection title="Ultimo domicilio conyugal">
         <SectionGroup>
           <Input label="Calle, numero, piso, depto"></Input>
         </SectionGroup>
@@ -44,7 +45,7 @@ const DatosDelMatrimonio = () => {
           <Input label="Partido"></Input>
           <Input label="Provincia"></Input>
         </SectionGroup>
-      </Section>
+      </SubSection>
       <SectionGroup>
         <Input label="Acta"></Input>
         <Input label="Tomo"></Input>

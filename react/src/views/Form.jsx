@@ -1,24 +1,22 @@
 import "./Form.css";
-import ParteActora from "./includes/ParteActora";
-import ParteDemandada from "./includes/ParteDemandada";
-import Escritos from "./includes/Escritos";
-import DatosDelMatrimonio from "./includes/DatosMatrimonio";
-import Honorarios from "./includes/Honorarios";
-import Comprobante from "./includes/Comprobante";
-import Submission from "./includes/Submission";
+import ParteActora from "./FormIncludes/ParteActora";
+import ParteDemandada from "./FormIncludes/ParteDemandada";
+import Escritos from "./FormIncludes/Escritos";
+import DatosDelMatrimonio from "./FormIncludes/DatosMatrimonio";
+import Honorarios from "./FormIncludes/Honorarios";
+import Comprobante from "./FormIncludes/Comprobante";
+import Submission from "./FormIncludes/Submission";
 
 const Form = () => {
   return (
     <form>
-      <div>
+      <div className="section-container">
         <ParteActora></ParteActora>
         <ParteDemandada></ParteDemandada>
         <Honorarios></Honorarios>
-      </div>
-      <div>
         <DatosDelMatrimonio></DatosDelMatrimonio>
         <Escritos></Escritos>
-        <div>
+        <div className="section-group">
           <Comprobante></Comprobante>
           <Submission></Submission>
         </div>

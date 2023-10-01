@@ -27,18 +27,19 @@ const Escritos = () => {
   return (
     <Section title="Escritos">
       <SectionGroup>
-        <TextArea label="Alimentos"></TextArea>
+        <TextArea label="Alimentos" checkbox></TextArea>
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Comunicación"></TextArea>
+        <TextArea label="Comunicación" checkbox></TextArea>
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Cuidado personal"></TextArea>
+        <TextArea label="Cuidado personal" checkbox></TextArea>
       </SectionGroup>
       <SectionGroup>
         <TextArea
           label="Bienes"
           defaultText="Prueba de texto por defecto."
+          checkbox
         ></TextArea>
       </SectionGroup>
       <SectionGroup>

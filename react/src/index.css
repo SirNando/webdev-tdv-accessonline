@@ -1,3 +1,5 @@
 html {
+  margin: auto;
   min-width: 1920px;
+  max-width: 2500px;
 }

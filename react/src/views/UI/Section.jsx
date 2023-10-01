@@ -1,3 +1,5 @@
+import "./Section.css"
+
 const Section = (props) => {
   const sectionTitle = props.title;
 
@@ -5,12 +7,6 @@ const Section = (props) => {
     listStyle: "none",
     margin: 0,
     padding: 0,
-  };
-  const sectionStyles = {
-    maxWidth: "40rem",
-    padding: "1rem",
-    borderRadius: "8px",
-    boxShadow: "1px 1px 10px rgba(0,0,0,0.2)",
   };
 
   const headingStyles = {
@@ -21,7 +17,7 @@ const Section = (props) => {
   };
 
   return (
-    <section style={sectionStyles}>
+    <section className="Section">
       <h2 style={headingStyles}>{sectionTitle}</h2>
       <ul style={listStyles}>{props.children}</ul>
     </section>

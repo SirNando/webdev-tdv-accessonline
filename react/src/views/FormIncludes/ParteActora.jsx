@@ -3,7 +3,7 @@ import Select from "../UI/Select";
 import Section from "../UI/Section";
 import SectionGroup from "../UI/SectionGroup";
 
-const ParteActora = () => {
+const ParteActora = (props) => {
   const asistenciaOptions = [
     { label: "Conferencia", value: "conferencia" },
     { label: "Remarketing", value: "rmkt" },
@@ -14,11 +14,13 @@ const ParteActora = () => {
     { label: "M", value: "m" },
     { label: "F", value: "f" },
   ];
+  const clientData = props.clientData;
+  console.log(clientData);
 
   return (
     <Section title="Parte Actora">
       <SectionGroup>
-        <Input label="Nombre"></Input>
+        <Input label="Nombre" value={clientData}></Input>
         <Input label="Apellido"></Input>
         <Input label="DNI" type="number"></Input>
         <Input label="Nacionalidad"></Input>

@@ -7,11 +7,22 @@ import Honorarios from "./FormIncludes/Honorarios";
 import Comprobante from "./FormIncludes/Comprobante";
 import Submission from "./FormIncludes/Submission";
 
+async function getClientData() {}
+
 const Form = () => {
+  let clientData;
+  const headers = { "Content-Type": "application/json" };
+
+  fetch("http://localhost:3000/accessOnline/client/6519e3e8e3382b8ab39b66a4", {
+    headers,
+  })
+    .then((response) => response.json())
+    .then((data) => (clientData = data));
+    
   return (
     <form>
       <div className="section-container">
-        <ParteActora></ParteActora>
+        <ParteActora clientData={clientData}></ParteActora>
         <ParteDemandada></ParteDemandada>
         <Honorarios></Honorarios>
         <DatosDelMatrimonio></DatosDelMatrimonio>

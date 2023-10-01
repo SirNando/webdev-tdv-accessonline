@@ -7,6 +7,7 @@ const Input = (props) => {
   const inputStyles = {
     width: "100%",
   };
+  const value = props.value;
 
   if (props.type) type = props.type;
 
@@ -17,7 +18,7 @@ const Input = (props) => {
       label={label}
       className="mb-3"
     >
-      <Form.Control type={type} placeholder="" />
+      <Form.Control type={type} placeholder="" value={value}/>
     </FloatingLabel>
   );
 };

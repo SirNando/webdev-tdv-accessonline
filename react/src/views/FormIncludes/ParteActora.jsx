@@ -14,40 +14,40 @@ const ParteActora = (props) => {
     { label: "M", value: "m" },
     { label: "F", value: "f" },
   ];
-  const clientData = props.clientData;
-  console.log(clientData);
+
+  const clientData = props.data;
 
   return (
     <Section title="Parte Actora">
       <SectionGroup>
-        <Input label="Nombre" value={clientData}></Input>
-        <Input label="Apellido"></Input>
-        <Input label="DNI" type="number"></Input>
-        <Input label="Nacionalidad"></Input>
+        <Input label="Nombre" value={clientData.nombre}></Input>
+        <Input label="Apellido" value={clientData.apellido}></Input>
+        <Input label="DNI" type="number" value={clientData.documento}></Input>
+        <Input label="Nacionalidad" value={clientData.nacionalidad}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Domicilio"></Input>
+        <Input label="Domicilio" value={clientData.domicilio}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Localidad"></Input>
-        <Input label="Partido"></Input>
-        <Input label="Provincia"></Input>
+      <Input label="Localidad" value={clientData.localidad}></Input>
+        <Input label="Partido" value={clientData.partido}></Input>
+        <Input label="Provincia" value={clientData.provincia}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Entrecalle"></Input>
+      <Input label="Entrecalle" value={clientData.entrecalle}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Correo"></Input>
-        <Input label="Codigo de país" type="number"></Input>
-        <Input label="Código de área" type="number"></Input>
-        <Input label="Teléfono" type="number"></Input>
+        <Input label="Correo" value={clientData.correo}></Input>
+        <Input label="Codigo de país" type="number" value={clientData.codigoPais}></Input>
+        <Input label="Código de área" type="number" value={clientData.codigoArea}></Input>
+        <Input label="Teléfono" type="number" value={clientData.telefono}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Teléfono alternativo"></Input>
-        <Input label="Pertenece a"></Input>
+        <Input label="Teléfono alternativo" value={clientData.telefonoAlt}></Input>
+        <Input label="Pertenece a" value={clientData.telefonoAltWho}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Select label="Asistencia" options={asistenciaOptions}></Select>
+        <Select label="Asistencia" options={asistenciaOptions} ></Select>
         <Select label="M/F" options={mfOptions}></Select>
       </SectionGroup>
     </Section>

@@ -3,7 +3,7 @@ import Section from "../UI/Section";
 import TextArea from "../UI/TextArea";
 import Select from "../UI/Select";
 
-const Escritos = () => {
+const Escritos = (props) => {
   const propuestaBienesOptions = [
     {
       label:
@@ -24,6 +24,8 @@ const Escritos = () => {
     { label: "CABA", value: "caba" },
   ];
 
+  const clientData = props.data;
+
   return (
     <Section title="Escritos">
       <SectionGroup>
@@ -38,7 +40,7 @@ const Escritos = () => {
       <SectionGroup>
         <TextArea
           label="Bienes"
-          defaultText="Prueba de texto por defecto."
+          value={clientData.bienes}
           checkbox
         ></TextArea>
       </SectionGroup>

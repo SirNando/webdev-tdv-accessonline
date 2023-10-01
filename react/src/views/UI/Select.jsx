@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 const SelectOptions = (props) => {
   const options = props.options;
 
-  // Map over the options array and create <option> elements
   const optionElements = options.map((option, index) => (
     <option key={index} value={option.value}>
       {option.label}
@@ -15,8 +14,8 @@ const SelectOptions = (props) => {
 };
 
 const Select = (props) => {
-  const label = props.label;
   const options = props.options;
+
   const selectStyles = {
     width: "100%",
   };
@@ -26,10 +25,12 @@ const Select = (props) => {
       <FloatingLabel
         style={selectStyles}
         controlId="floatingSelect"
-        label={label}
+        label={props.label || ""}
         className="mb-3"
       >
-        <Form.Select aria-label="Floating label select example">
+        <Form.Select
+          value={props.value}
+        >
           <SelectOptions options={options}></SelectOptions>
         </Form.Select>
       </FloatingLabel>

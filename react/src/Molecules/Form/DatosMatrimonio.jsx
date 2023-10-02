@@ -1,8 +1,8 @@
-import Section from "../UI/Section";
-import SubSection from "../UI/SubSection";
-import SectionGroup from "../UI/SectionGroup";
-import Input from "../UI/Input";
-import Select from "../UI/Select";
+import Section from "../../Atoms/Section";
+import SubSection from "../../Atoms/SubSection";
+import SectionGroup from "../../Atoms/SectionGroup";
+import Input from "../../Atoms/Input";
+import Select from "../../Atoms/Select";
 
 const DatosDelMatrimonio = () => {
   const domiciliosLegales = [
@@ -41,7 +41,7 @@ const DatosDelMatrimonio = () => {
           <Input label="Calle, numero, piso, depto"></Input>
         </SectionGroup>
         <SectionGroup>
-          <Input label="Localicad"></Input>
+          <Input label="Localidad"></Input>
           <Input label="Partido"></Input>
           <Input label="Provincia"></Input>
         </SectionGroup>

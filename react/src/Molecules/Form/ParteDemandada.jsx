@@ -1,6 +1,6 @@
-import Input from "../UI/Input";
-import Section from "../UI/Section";
-import SectionGroup from "../UI/SectionGroup";
+import Input from "../../Atoms/Input";
+import Section from "../../Atoms/Section";
+import SectionGroup from "../../Atoms/SectionGroup";
 
 const ParteDemandada = (props) => {
   const clientData = props.data;
@@ -25,9 +25,21 @@ const ParteDemandada = (props) => {
         <Input label="Entrecalle" value={clientData.entrecalle}></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Codigo de país" type="number" value={clientData.codigoPais}></Input>
-        <Input label="Código de área" type="number" value={clientData.codigoArea}></Input>
-        <Input label="Teléfono" type="number" value={clientData.telefono}></Input>
+        <Input
+          label="Codigo de país"
+          type="number"
+          value={clientData.codigoPais}
+        ></Input>
+        <Input
+          label="Código de área"
+          type="number"
+          value={clientData.codigoArea}
+        ></Input>
+        <Input
+          label="Teléfono"
+          type="number"
+          value={clientData.telefono}
+        ></Input>
         <Input label="Fijo" value={clientData.telefonoFijo}></Input>
       </SectionGroup>
     </Section>

@@ -1,5 +1,5 @@
-import Form from "./views/Form";
-import ClientList from "./views/ClientList";
+import Form from "./Templates/Form";
+import ClientList from "./Templates/ClientList";
 
 function App() {
   return (

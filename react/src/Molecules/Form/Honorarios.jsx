@@ -1,9 +1,8 @@
-import Section from "../UI/Section";
-import SubSection from "../UI/SubSection";
-import Input from "../UI/Input";
-import SectionGroup from "../UI/SectionGroup";
-import Checkbox from "../UI/Checkbox";
-import Select from "../UI/Select";
+import Section from "../../Atoms/Section";
+import SubSection from "../../Atoms/SubSection";
+import Input from "../../Atoms/Input";
+import SectionGroup from "../../Atoms/SectionGroup";
+import Select from "../../Atoms/Select";
 
 const Honorarios = () => {
   const medioDePagoOptions = [

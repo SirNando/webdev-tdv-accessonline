@@ -1,7 +1,7 @@
-import SectionGroup from "../UI/SectionGroup";
-import Section from "../UI/Section";
-import TextArea from "../UI/TextArea";
-import Select from "../UI/Select";
+import SectionGroup from "../../Atoms/SectionGroup";
+import Section from "../../Atoms/Section";
+import TextArea from "../../Atoms/TextArea";
+import Select from "../../Atoms/Select";
 
 const Escritos = (props) => {
   const propuestaBienesOptions = [
@@ -38,11 +38,7 @@ const Escritos = (props) => {
         <TextArea label="Cuidado personal" checkbox></TextArea>
       </SectionGroup>
       <SectionGroup>
-        <TextArea
-          label="Bienes"
-          value={clientData.bienes}
-          checkbox
-        ></TextArea>
+        <TextArea label="Bienes" value={clientData.bienes} checkbox></TextArea>
       </SectionGroup>
       <SectionGroup>
         <Select

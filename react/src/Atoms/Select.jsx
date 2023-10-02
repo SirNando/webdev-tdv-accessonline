@@ -28,9 +28,7 @@ const Select = (props) => {
         label={props.label || ""}
         className="mb-3"
       >
-        <Form.Select
-          value={props.value}
-        >
+        <Form.Select value={props.value || ""}>
           <SelectOptions options={options}></SelectOptions>
         </Form.Select>
       </FloatingLabel>

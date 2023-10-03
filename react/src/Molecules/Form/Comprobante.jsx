@@ -30,29 +30,50 @@ const Comprobante = (props) => {
           options={motivoOptions}
           label="Motivo"
           value={clientData.motivo}
+          id="comprobanteMotivo"
         ></Select>
-        <Input label="Importe" value={clientData.importe}></Input>
+        <Input
+          label="Importe"
+          value={clientData.importe}
+          id="comprobanteImporte"
+        ></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Carátula" value={clientData.caratula}></Input>
-        <Input label="Nombre" value={clientData.nombre}></Input>
+        <Input
+          label="Carátula"
+          value={clientData.caratula}
+          id="comprobanteCaratula"
+        ></Input>
+        <Input
+          label="Nombre"
+          value={clientData.nombre}
+          id="comprobanteNombre"
+        ></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Fecha" type="date" value={clientData.fecha}></Input>
+        <Input
+          label="Fecha"
+          type="date"
+          value={clientData.fecha}
+          id="comprobanteFecha"
+        ></Input>
         <Select
           options={oficinaClienteOptions}
           label="Oficina Cliente"
           value={clientData.oficinaCliente}
+          id="comprobanteOficina"
         ></Select>
         <Select
           options={origenOptions}
           label="Origen"
           value={clientData.origen}
+          id="comprobanteOrigen"
         ></Select>
         <Input
           label="Fecha de entrevista"
           type="date"
           value={clientData.fechaEntrevista}
+          id="comprobanteFechaEntrevista"
         ></Input>
       </SectionGroup>
     </Section>

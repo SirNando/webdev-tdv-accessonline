@@ -4,7 +4,7 @@ import SectionGroup from "../../Atoms/SectionGroup";
 import Input from "../../Atoms/Input";
 import Select from "../../Atoms/Select";
 
-const DatosDelMatrimonio = () => {
+const DatosDelMatrimonio = (props) => {
   const domiciliosLegales = [
     { label: "Almirante Brown", value: "moron" },
     { label: "Arieta 3223", value: "san justo" },
@@ -30,10 +30,12 @@ const DatosDelMatrimonio = () => {
     { label: "Arieta 3223", value: "san justo" },
   ];
 
+  const clientData = props.data;
+
   return (
     <Section title="Datos del Matrimonio">
       <SectionGroup>
-        <Input label="Sobre"></Input>
+        <Input label="Sobre" value={clientData.sobre}></Input>
         <Select label="Domicilio Legal" options={domiciliosLegales}></Select>
       </SectionGroup>
       <SubSection title="Ultimo domicilio conyugal">

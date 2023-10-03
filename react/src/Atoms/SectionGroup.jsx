@@ -1,10 +1,7 @@
-const SectionGroup = (props) => {
-  const style = {
-    display: "flex",
-    gap: "0.3rem",
-  };
+import "./SectionGroup.css"
 
-  return <li style={style}>{props.children}</li>;
+const SectionGroup = (props) => {
+  return <li className="SectionGroup">{props.children}</li>;
 };
 
 export default SectionGroup;

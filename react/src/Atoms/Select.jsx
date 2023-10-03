@@ -1,3 +1,4 @@
+import "./Select.css"
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 
@@ -16,19 +17,14 @@ const SelectOptions = (props) => {
 const Select = (props) => {
   const options = props.options;
 
-  const selectStyles = {
-    width: "100%",
-  };
-
   return (
     <>
       <FloatingLabel
-        style={selectStyles}
-        controlId="floatingSelect"
-        label={props.label || ""}
-        className="mb-3"
+        controlId={props.id}
+        label={props.label}
+        className="mb-3 Select"
       >
-        <Form.Select value={props.value || ""}>
+        <Form.Select value={props.value}>
           <SelectOptions options={options}></SelectOptions>
         </Form.Select>
       </FloatingLabel>

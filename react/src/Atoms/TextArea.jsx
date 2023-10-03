@@ -5,14 +5,14 @@ import Form from "react-bootstrap/Form";
 function TextArea(props) {
   return (
     <InputGroup className="mb-3">
-      <FloatingLabel controlId="floatingTextarea" label={props.label || ""}>
+      <FloatingLabel controlId={props.id} label={props.label}>
         <Form.Control
           as="textarea"
           placeholder="placeholding"
           value={props.value}
         />
       </FloatingLabel>
-      {props.checkbox ? <InputGroup.Checkbox></InputGroup.Checkbox> : ""}
+      {props.checkbox ? <InputGroup.Checkbox id={props.id + "Checkbox"}></InputGroup.Checkbox> : ""}
     </InputGroup>
   );
 }

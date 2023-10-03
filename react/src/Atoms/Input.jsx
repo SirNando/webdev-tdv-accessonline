@@ -1,17 +1,13 @@
+import "./Input.css";
 import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 const Input = (props) => {
-  const inputStyles = {
-    width: "100%",
-  };
-
   return (
     <FloatingLabel
-      style={inputStyles}
-      controlId="floatingInput"
-      label={props.label || ""}
-      className="mb-3"
+      controlId={props.id}
+      label={props.label}
+      className="mb-3 Input"
     >
       <Form.Control
         type={props.type || "text"}

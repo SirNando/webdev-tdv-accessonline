@@ -4,7 +4,8 @@ import ClientList from "./Templates/ClientList";
 function App() {
   return (
     <>
-      <Form />
+      {/* <ClientList></ClientList> */}
+      <Form></Form>
     </>
   );
 }

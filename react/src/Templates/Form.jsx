@@ -8,7 +8,7 @@ import Honorarios from "../Molecules/Form/Honorarios";
 import Comprobante from "../Molecules/Form/Comprobante";
 import Submission from "../Molecules/Form/Submission";
 
-const Form = () => {
+const Form = (props) => {
   const [clientData, setClientData] = useState({
     _id: "",
     actorData: {},
@@ -20,19 +20,20 @@ const Form = () => {
     submissionData: {},
   });
 
-  useEffect(() => {
-    // Fetch data from the database and store it in the 'data' state
-    const headers = { "Content-Type": "application/json" };
-    fetch(
-      "http://localhost:3000/accessOnline/client/6519e3e8e3382b8ab39b66a4",
-      headers
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) setClientData(data);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  if(!props.newClient) {
+    useEffect(() => {
+      const headers = { "Content-Type": "application/json" };
+      fetch(
+        "http://localhost:3000/accessOnline/client/6519e3e8e3382b8ab39b66a4",
+        headers
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          if (data) setClientData(data);
+        })
+        .catch((error) => console.error("Error fetching data:", error));
+    }, []);
+  }
 
   return (
     <form>

@@ -1,36 +1,22 @@
 import "./ClientList.css";
 import { Button, Pagination, Table } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 const ClientList = () => {
-  const clients = [
-    {
-      caratula: "Mati y Cata",
-      fechaFirma: "Hoy",
-      nombreActor: "Mati",
-      apellidoActor: "Nandin",
-      nombreDemandado: "Catalina",
-      apellidoDemandado: "Nunies",
-      opciones: ["Editar", "Borrar"],
-    },
-    {
-      caratula: "Mati y Cata",
-      fechaFirma: "Hoy",
-      nombreActor: "Mati",
-      apellidoActor: "Nandin",
-      nombreDemandado: "Catalina",
-      apellidoDemandado: "Nunies",
-      opciones: ["Editar", "Borrar"],
-    },
-    {
-      caratula: "Mati y Cata",
-      fechaFirma: "Hoy",
-      nombreActor: "Mati",
-      apellidoActor: "Nandin",
-      nombreDemandado: "Catalina",
-      apellidoDemandado: "Nunies",
-      opciones: ["Editar", "Borrar"],
-    },
-  ];
+
+  const [allClients, setAllClients] = useState([]);
+
+
+  useEffect(() => {
+    const headers = { "Content-Type": "application/json" };
+    fetch("http://localhost:3000/accessOnline/clientList", headers)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) setAllClients(data);
+        console.log(allClients)
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
   return (
     <Table striped bordered hover>
@@ -46,29 +32,25 @@ const ClientList = () => {
         </tr>
       </thead>
       <tbody>
-        {clients.map((client) => {
+        {allClients.map((client, index) => {
           return (
-            <tr>
-              <td>{client.caratula}</td>
-              <td>{client.fechaFirma}</td>
-              <td>{client.nombreActor}</td>
-              <td>{client.apellidoActor}</td>
-              <td>{client.nombreDemandado}</td>
-              <td>{client.apellidoDemandado}</td>
-              <td>
-                {client.opciones.map((option) => {
-                  return <Button>{option}</Button>;
-                })}
-              </td>
+            <tr key={index}>
+                <td>{client.actorData.nombre}</td>
+                <td>{client.fechaFirma}</td>
+                <td>{client.actorData.nombre}</td>
+                <td>{client.apellidoActor}</td>
+                <td>{client.nombreDemandado}</td>
+                <td>{client.apellidoDemandado}</td>
+                <td>
+                {Array.isArray(client.opciones) &&
+                    client.opciones.map((option, optionIndex) => (
+                      <Button key={optionIndex}>{option}</Button>
+                    ))}
+                </td>
             </tr>
           );
         })}
       </tbody>
-      <Pagination>
-        <Pagination.Item active>1</Pagination.Item>
-        <Pagination.Item>2</Pagination.Item>
-        <Pagination.Item>3</Pagination.Item>
-      </Pagination>
     </Table>
   );
 };

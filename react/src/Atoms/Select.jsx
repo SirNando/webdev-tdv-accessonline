@@ -1,35 +1,25 @@
-import "./Select.css"
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
+import { Select, MenuItem } from "@mui/material";
 
-const SelectOptions = (props) => {
-  const options = props.options;
-
-  const optionElements = options.map((option, index) => (
-    <option key={index} value={option.value}>
-      {option.label}
-    </option>
-  ));
-
-  return <>{optionElements}</>;
-};
-
-const Select = (props) => {
-  const options = props.options;
-
+const SelectBox = ({ options, value, name, onChange }) => {
   return (
-    <>
-      <FloatingLabel
-        controlId={props.id}
-        label={props.label}
-        className="mb-3 Select"
-      >
-        <Form.Select value={props.value}>
-          <SelectOptions options={options}></SelectOptions>
-        </Form.Select>
-      </FloatingLabel>
-    </>
+    <Select
+      labelId="demo-simple-select-label"
+      id="demo-simple-select"
+      value={value}
+      label="Test"
+      onChange={(event) => onChange(event, name)}
+      className="m-2 w-full"
+    >
+      {options.map((option, key) => {
+        return (
+          <MenuItem key={key} value={option.value}>
+            {option.label}
+          </MenuItem>
+        );
+      })}
+      <MenuItem value={undefined}></MenuItem>
+    </Select>
   );
 };
 
-export default Select;
+export default SelectBox;

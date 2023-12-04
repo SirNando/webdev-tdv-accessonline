@@ -2,48 +2,101 @@ import Input from "../../Atoms/Input";
 import Section from "../../Atoms/Section";
 import SectionGroup from "../../Atoms/SectionGroup";
 
-const ParteDemandada = (props) => {
-  const clientData = props.data;
-
+export default function ParteDemandada({ data, onChange }) {
   return (
     <Section title="Parte Demandada">
       <SectionGroup>
-        <Input label="Nombre" value={clientData.nombre}></Input>
-        <Input label="Apellido" value={clientData.apellido}></Input>
-        <Input label="DNI" type="number" value={clientData.documento}></Input>
-        <Input label="Nacionalidad" value={clientData.nacionalidad}></Input>
+        <Input
+          label="Nombre"
+          value={data.nombre}
+          name="demandadoData_nombre"
+          onChange={onChange}
+        ></Input>
+        <Input
+          label="Apellido"
+          value={data.apellido}
+          name="demandadoData_apellido"
+          onChange={onChange}
+        ></Input>
+        <Input
+          label="DNI"
+          type="number"
+          value={data.documento}
+          name="demandadoData_documento"
+          onChange={onChange}
+        ></Input>
+        <Input
+          label="Nacionalidad"
+          value={data.nacionalidad}
+          name="demandadoData_nacionalidad"
+          onChange={onChange}
+        ></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Domicilio" value={clientData.domicilio}></Input>
+        <Input
+          label="Domicilio"
+          value={data.domicilio}
+          name="demandadoData_domicilio"
+          onChange={onChange}
+        ></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Localidad" value={clientData.localidad}></Input>
-        <Input label="Partido" value={clientData.partido}></Input>
-        <Input label="Provincia" value={clientData.provincia}></Input>
+        <Input
+          label="Localidad"
+          value={data.localidad}
+          name="demandadoData_localidad"
+          onChange={onChange}
+        ></Input>
+        <Input
+          label="Partido"
+          value={data.partido}
+          name="demandadoData_partido"
+          onChange={onChange}
+        ></Input>
+        <Input
+          label="Provincia"
+          value={data.provincia}
+          name="demandadoData_provincia"
+          onChange={onChange}
+        ></Input>
       </SectionGroup>
       <SectionGroup>
-        <Input label="Entrecalle" value={clientData.entrecalle}></Input>
+        <Input
+          label="Entrecalle"
+          value={data.entrecalle}
+          name="demandadoData_entrecalle"
+          onChange={onChange}
+        ></Input>
       </SectionGroup>
       <SectionGroup>
         <Input
           label="Codigo de país"
           type="number"
-          value={clientData.codigoPais}
+          value={data.codigoPais}
+          name="demandadoData_codigoPais"
+          onChange={onChange}
         ></Input>
         <Input
           label="Código de área"
           type="number"
-          value={clientData.codigoArea}
+          value={data.codigoArea}
+          name="demandadoData_codigoArea"
+          onChange={onChange}
         ></Input>
         <Input
           label="Teléfono"
           type="number"
-          value={clientData.telefono}
+          value={data.telefono}
+          name="demandadoData_telefono"
+          onChange={onChange}
         ></Input>
-        <Input label="Fijo" value={clientData.telefonoFijo}></Input>
+        <Input
+          label="Fijo"
+          value={data.telefonoFijo}
+          name="demandadoData_telefonoFijo"
+          onChange={onChange}
+        ></Input>
       </SectionGroup>
     </Section>
   );
-};
-
-export default ParteDemandada;
+}

@@ -1,21 +1,14 @@
-import "./Input.css";
-import Form from "react-bootstrap/Form";
-import FloatingLabel from "react-bootstrap/FloatingLabel";
+import { TextField } from "@mui/material";
 
-const Input = (props) => {
+export default function InputField({ label, value, name, type, onChange }) {
   return (
-    <FloatingLabel
-      controlId={props.id}
-      label={props.label}
-      className="mb-3 Input"
-    >
-      <Form.Control
-        type={props.type || "text"}
-        placeholder="placeholding"
-        value={props.value}
+      <TextField
+        className="w-full m-2"
+        variant="outlined"
+        label={label}
+        type={type}
+        value={value}
+        onChange={(event) => onChange(event, name)}
       />
-    </FloatingLabel>
   );
-};
-
-export default Input;
+}

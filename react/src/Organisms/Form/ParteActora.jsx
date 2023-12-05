@@ -3,7 +3,7 @@ import SelectBox from "../../Atoms/Select";
 import Section from "../../Atoms/Section";
 import SectionGroup from "../../Atoms/SectionGroup";
 
-const ParteActora = ({ data, onChange }) => {
+export default function ParteActora({ data }) {
   const asistenciaOptions = [
     { label: "Conferencia", value: "conferencia" },
     { label: "Remarketing", value: "rmkt" },
@@ -22,26 +22,22 @@ const ParteActora = ({ data, onChange }) => {
           label="Nombre"
           value={data.nombre}
           name="actorData_nombre"
-          onChange={onChange}
         ></Input>
         <Input
           label="Apellido"
           value={data.apellido}
-          onChange={onChange}
-          name="actorData_apellido" 
+          name="actorData_apellido"
         ></Input>
         <Input
           label="DNI"
           type="number"
           value={data.documento}
           name="actorData_documento"
-          onChange={onChange}
         ></Input>
         <Input
           label="Nacionalidad"
           value={data.nacionalidad}
           name="actorData_nacionalidad"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
@@ -49,7 +45,6 @@ const ParteActora = ({ data, onChange }) => {
           label="Domicilio"
           value={data.domicilio}
           name="actorData_domicilio"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
@@ -57,7 +52,6 @@ const ParteActora = ({ data, onChange }) => {
           label="Localidad"
           value={data.localidad}
           name="actorData_localidad"
-          onChange={onChange}
         ></Input>
         <Input
           label="Partido"
@@ -68,7 +62,6 @@ const ParteActora = ({ data, onChange }) => {
           label="Provincia"
           value={data.provincia}
           name="actorData_provincia"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
@@ -76,7 +69,6 @@ const ParteActora = ({ data, onChange }) => {
           label="Entrecalle"
           value={data.entrecalle}
           name="actorData_entrecalle"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
@@ -84,34 +76,29 @@ const ParteActora = ({ data, onChange }) => {
           label="Correo"
           value={data.correo}
           name="actorData_correo"
-          onChange={onChange}
         ></Input>
         <Input
           label="Codigo de país"
           type="number"
           value={data.codigoPais}
           name="actorData_codigoPais"
-          onChange={onChange}
         ></Input>
         <Input
           label="Código de área"
           type="number"
           value={data.codigoArea}
           name="actorData_codigoArea"
-          onChange={onChange}
         ></Input>
         <Input
           label="Teléfono"
           type="number"
           value={data.telefono}
           name="actorData_telefono"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
         <Input
           label="Teléfono alternativo"
-          onChange={onChange}
           value={data.telefonoAlt}
           name="actorData_telefonoAlt"
         ></Input>
@@ -119,7 +106,6 @@ const ParteActora = ({ data, onChange }) => {
           label="Pertenece a"
           value={data.telefonoAltWho}
           name="actorData_telefonoAltWho"
-          onChange={onChange}
         ></Input>
       </SectionGroup>
       <SectionGroup>
@@ -128,18 +114,14 @@ const ParteActora = ({ data, onChange }) => {
           options={asistenciaOptions}
           value={data.asistencia}
           name="actorData_asistencia"
-          onChange={onChange}
         ></SelectBox>
         <SelectBox
           label="M/F"
           options={mfOptions}
-          onChange={onChange}
           value={data.mf}
           name="actorData_mf"
         ></SelectBox>
       </SectionGroup>
     </Section>
   );
-};
-
-export default ParteActora;
+}

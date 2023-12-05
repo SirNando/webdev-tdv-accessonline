@@ -1,50 +1,17 @@
 import { useEffect, useState } from "react";
-import ParteActora from "../Molecules/Form/ParteActora";
-import ParteDemandada from "../Molecules/Form/ParteDemandada";
-import Escritos from "../Molecules/Form/Escritos";
-import DatosDelMatrimonio from "../Molecules/Form/DatosMatrimonio";
-import Honorarios from "../Molecules/Form/Honorarios";
-import Comprobante from "../Molecules/Form/Comprobante";
-import Submission from "../Molecules/Form/Submission";
-import { debounce } from "@mui/material";
+import ParteActora from "../Organisms/Form/ParteActora";
+import ParteDemandada from "../Organisms/Form/ParteDemandada";
+import Escritos from "../Organisms/Form/Escritos";
+import DatosDelMatrimonio from "../Organisms/Form/DatosMatrimonio";
+import Honorarios from "../Organisms/Form/Honorarios";
+import Comprobante from "../Organisms/Form/Comprobante";
+import Submission from "../Organisms/Form/Submission";
 
 export default function Form({ isNewClient }) {
   const [clientData, setClientData] = useState({
     _id: "",
-    actorData: {
-      nombre: "",
-      apellido: "",
-      documento: "",
-      nacionalidad: "",
-      domicilio: "",
-      localidad: "",
-      partido: "",
-      provincia: "",
-      entrecalle: "",
-      correo: "",
-      codigoPais: "",
-      codigoArea: "",
-      telefono: "",
-      telefonoAlt: "",
-      telefonoAltWho: "",
-      asistencia: "",
-      mf: "",
-    },
-    demandadoData: {
-      nombre: "",
-      apellido: "",
-      documento: "",
-      nacionalidad: "",
-      domicilio: "",
-      localidad: "",
-      partido: "",
-      provincia: "",
-      entrecalle: "",
-      codigoPais: "",
-      codigoArea: "",
-      telefono: "",
-      telefonoFijo: "",
-    },
+    actorData: {},
+    demandadoData: {},
     honorariosData: {},
     matrimonioData: {},
     escritosData: {},
@@ -52,42 +19,7 @@ export default function Form({ isNewClient }) {
     submissionData: {},
   });
 
-  const [actorData, setActorData] = useState({
-    nombre: "",
-    apellido: "",
-    documento: "",
-    nacionalidad: "",
-    domicilio: "",
-    localidad: "",
-    partido: "",
-    provincia: "",
-    entrecalle: "",
-    correo: "",
-    codigoPais: "",
-    codigoArea: "",
-    telefono: "",
-    telefonoAlt: "",
-    telefonoAltWho: "",
-    asistencia: "",
-    mf: "",
-  });
-  const [demandadoData, setDemandadoData] = useState({
-    nombre: "",
-    apellido: "",
-    documento: "",
-    nacionalidad: "",
-    domicilio: "",
-    localidad: "",
-    partido: "",
-    provincia: "",
-    entrecalle: "",
-    codigoPais: "",
-    codigoArea: "",
-    telefono: "",
-    telefonoFijo: "",
-  });
-
-  function handleInputChange(event, fullName) {
+  function handleSubmit(event) {
     const [section, name] = fullName.split("_");
     const value = event.target.value;
 
@@ -112,16 +44,10 @@ export default function Form({ isNewClient }) {
   }, [actorData]); */
 
   return (
-    <form>
-      <div className="grid grid-cols-3 w-[90%] gap-4 my-4 mx-auto">
-        <ParteActora
-          data={actorData}
-          onChange={handleInputChange}
-        ></ParteActora>
-        <ParteDemandada
-          data={demandadoData}
-          onChange={handleInputChange}
-        ></ParteDemandada>
+    <form onSubmit={handleSubmit} className="w-[2500px] m-auto">
+      <div className="grid grid-cols-3 gap-4 m-4">
+        <ParteActora data={clientData.actorData}></ParteActora>
+        <ParteDemandada data={clientData.demandadoData}></ParteDemandada>
         <Honorarios data={clientData.honorariosData}></Honorarios>
         <DatosDelMatrimonio
           data={clientData.matrimonioData}

@@ -1,25 +1,33 @@
 import { Select, MenuItem } from "@mui/material";
+import { FormControl } from "@mui/material";
+import { InputLabel } from "@mui/material";
+import { useState } from "react";
 
-const SelectBox = ({ options, value, name, onChange }) => {
+export default function SelectBox({ options, value = "", name, label }) {
+  const [content, setContent] = useState(value);
+
+  function handleChange(event) {
+    setContent(event.target.value);
+  }
+
   return (
-    <Select
-      labelId="demo-simple-select-label"
-      id="demo-simple-select"
-      value={value}
-      label="Test"
-      onChange={(event) => onChange(event, name)}
-      className="m-2 w-full"
-    >
-      {options.map((option, key) => {
-        return (
-          <MenuItem key={key} value={option.value}>
-            {option.label}
-          </MenuItem>
-        );
-      })}
-      <MenuItem value={undefined}></MenuItem>
-    </Select>
+    <FormControl className="w-full m-2">
+      <InputLabel>{label}</InputLabel>
+      <Select
+        value={content}
+        name={name}
+        onChange={handleChange}
+        label={label}
+        autoWidth
+      >
+        {options.map((option, key) => {
+          return (
+            <MenuItem value={option.value} key={key}>
+              {option.label}
+            </MenuItem>
+          );
+        })}
+      </Select>
+    </FormControl>
   );
-};
-
-export default SelectBox;
+}

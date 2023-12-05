@@ -1,6 +1,7 @@
 import SectionGroup from "../../Atoms/SectionGroup";
 import Section from "../../Atoms/Section";
 import TextArea from "../../Atoms/TextArea";
+import Input from "../../Atoms/Input";
 import Select from "../../Atoms/Select";
 
 const Escritos = (props) => {
@@ -30,6 +31,7 @@ const Escritos = (props) => {
     <Section title="Escritos">
       <SectionGroup>
         <TextArea label="Alimentos" checkbox></TextArea>
+        <Input label="Alimentos" name="escritos_alimentos" multiline />
       </SectionGroup>
       <SectionGroup>
         <TextArea label="Comunicación" checkbox></TextArea>

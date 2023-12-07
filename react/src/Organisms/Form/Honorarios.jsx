@@ -1,10 +1,9 @@
 import Section from "../../Atoms/Section";
-import SubSection from "../../Atoms/SubSection";
 import Input from "../../Atoms/Input";
 import SectionGroup from "../../Atoms/SectionGroup";
 import Select from "../../Atoms/Select";
 
-const Honorarios = () => {
+export default function Honorarios({ data }) {
   const medioDePagoOptions = [
     { label: "Oficina", value: "oficina" },
     { label: "Mercado Pago", value: "mp" },
@@ -18,28 +17,70 @@ const Honorarios = () => {
   return (
     <Section title="Honorarios">
       <SectionGroup>
-        <Input label="Total"></Input>
-        <Input label="Cantidad de cuotas"></Input>
-        <Input label="Valor de cuotas"></Input>
+        <Input label="Total" value={data.total} name="honorarios_total" />
+        <Input
+          label="Cantidad de cuotas"
+          value={data.cantCuotas}
+          name="escritos_cantCuotas"
+        />
+        <Input
+          label="Valor de cuotas"
+          value={data.valorCuota}
+          name="escritos_valorCuota"
+        />
       </SectionGroup>
       <SectionGroup>
-        <Input label="Descuento"></Input>
-        <Input label="Valor de cuota descontada"></Input>
+        <Input
+          label="Descuento"
+          value={data.descuento}
+          name="escritos_descuento"
+        />
+        <Input
+          label="Valor de cuota descontada"
+          value={data.valorCuotaDescuento}
+          name="escritos_valorCuotaDescuento"
+        />
       </SectionGroup>
       <SectionGroup>
-        <Input label="Primer vencimiento" type="date"></Input>
-        <Input label="Fecha de firma" type="date"></Input>
+        <Input
+          label="Primer vencimiento"
+          value={data.primerVencimiento}
+          name="escritos_primerVencimiento"
+          type="date"
+        />
+        <Input
+          label="Fecha de firma"
+          value={data.fechaFirma}
+          name="escritos_fechaFirma"
+          type="date"
+        />
       </SectionGroup>
-      <SubSection title="Partida de matrimonio">
+      <Section title="Partida de matrimonio" subsection>
         <SectionGroup>
-          <Select options={partidaOptions} label="Con Partida"></Select>
-          <Input label="Cantidad cuotas"></Input>
-          <Input label="Valor cuotas"></Input>
-          <Select options={medioDePagoOptions} label="Medio de pago"></Select>
+          <Select
+            label="Con Partida"
+            value={data.conPartida}
+            name="escritos_conPartida"
+            options={partidaOptions}
+          />
+          <Input
+            label="Cantidad cuotas"
+            value={data.cantCuotasPartida}
+            name="escritos_cantCuotasPartida"
+          />
+          <Input
+            label="Valor cuotas"
+            value={data.valorCuotaPartida}
+            name="escritos_valorCuotaPartida"
+          />
+          <Select
+            label="Medio de pago"
+            value={data.medioDePago}
+            name="escritos_medioDePago"
+            options={medioDePagoOptions}
+          />
         </SectionGroup>
-      </SubSection>
+      </Section>
     </Section>
   );
-};
-
-export default Honorarios;
+}

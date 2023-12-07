@@ -1,10 +1,9 @@
 import Section from "../../Atoms/Section";
-import SubSection from "../../Atoms/SubSection";
 import SectionGroup from "../../Atoms/SectionGroup";
 import Input from "../../Atoms/Input";
 import Select from "../../Atoms/Select";
 
-const DatosDelMatrimonio = (props) => {
+export default function DatosDelMatrimonio({ data }) {
   const domiciliosLegales = [
     { label: "Almirante Brown", value: "moron" },
     { label: "Arieta 3223", value: "san justo" },
@@ -30,43 +29,77 @@ const DatosDelMatrimonio = (props) => {
     { label: "Arieta 3223", value: "san justo" },
   ];
 
-  const clientData = props.data;
-
   return (
     <Section title="Datos del Matrimonio">
       <SectionGroup>
-        <Input label="Sobre" value={clientData.sobre}></Input>
-        <Select label="Domicilio Legal" options={domiciliosLegales}></Select>
-      </SectionGroup>
-      <SubSection title="Ultimo domicilio conyugal">
-        <SectionGroup>
-          <Input label="Calle, numero, piso, depto"></Input>
-        </SectionGroup>
-        <SectionGroup>
-          <Input label="Localidad"></Input>
-          <Input label="Partido"></Input>
-          <Input label="Provincia"></Input>
-        </SectionGroup>
-      </SubSection>
-      <SectionGroup>
-        <Input label="Acta"></Input>
-        <Input label="Tomo"></Input>
-        <Input label="Folio"></Input>
-        <Input label="Año"></Input>
-      </SectionGroup>
-      <SectionGroup>
-        <Select label="Prueba" options={pruebaOptions}></Select>
+        <Input label="Sobre" value={data.sobre} name="matrimonio_sobre" />
         <Select
-          label="Departamento Judicial"
-          options={deptoJudicialOptions}
+          label="Domicilio Legal"
+          value={data.domicilioLegal}
+          name="matrimonio_domicilioLegal"
+          options={domiciliosLegales}
         ></Select>
       </SectionGroup>
+      <Section title="Ultimo domicilio conyugal" subsection>
+        <SectionGroup>
+          <Input
+            label="Calle, numero, piso, depto"
+            value={data.calleNroPisoDpto}
+            name="matrimonio_calleNroPisoDpto"
+          />
+        </SectionGroup>
+        <SectionGroup>
+          <Input
+            label="Localidad"
+            value={data.localidad}
+            name="matrimonio_localidad"
+          />
+          <Input
+            label="Partido"
+            value={data.partido}
+            name="matrimonio_partido"
+          />
+          <Input
+            label="Provincia"
+            value={data.provincia}
+            name="matrimonio_provincia"
+          />
+        </SectionGroup>
+      </Section>
       <SectionGroup>
-        <Select label="Conyuge Firma" options={conyugeFirmaOptions}></Select>
-        <Select label="Radicacion" options={radicacionOptions}></Select>
+        <Input label="Acta" value={data.acta} name="matrimonio_acta" />
+        <Input label="Tomo" value={data.tomo} name="matrimonio_tomo" />
+        <Input label="Folio" value={data.folio} name="matrimonio_folio" />
+        <Input label="Año" value={data.anio} name="matrimonio_anio" />
+      </SectionGroup>
+      <SectionGroup>
+        <Select
+          label="Prueba"
+          value={data.prueba}
+          name="matrimonio_prueba"
+          options={pruebaOptions}
+        />
+        <Select
+          label="Departamento Judicial"
+          value={data.deptoJudicial}
+          name="matrimonio_deptoJudicial"
+          options={deptoJudicialOptions}
+        />
+      </SectionGroup>
+      <SectionGroup>
+        <Select
+          label="Conyuge Firma"
+          value={data.conyugeFirma}
+          name="matrimonio_conyugeFirma"
+          options={conyugeFirmaOptions}
+        />
+        <Select
+          label="Radicacion"
+          value={data.radicacion}
+          name="matrimonio_radicacion"
+          options={radicacionOptions}
+        />
       </SectionGroup>
     </Section>
   );
-};
-
-export default DatosDelMatrimonio;
+}

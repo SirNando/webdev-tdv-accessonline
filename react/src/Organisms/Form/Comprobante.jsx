@@ -3,7 +3,7 @@ import Section from "../../Atoms/Section";
 import SectionGroup from "../../Atoms/SectionGroup";
 import Select from "../../Atoms/Select";
 
-const Comprobante = (props) => {
+export default function Comprobante({ data }) {
   const motivoOptions = [
     { label: "Consulta", value: "consulta" },
     { label: "Cuota", value: "cuota" },
@@ -21,63 +21,59 @@ const Comprobante = (props) => {
     { label: "Facebook", value: "facebook" },
   ];
 
-  const clientData = props.data;
-
   return (
     <Section title="Comprobante de pago">
       <SectionGroup>
         <Select
           options={motivoOptions}
           label="Motivo"
-          value={clientData.motivo}
-          id="comprobanteMotivo"
+          value={data.motivo}
+          name="comprobante_motivo"
         ></Select>
         <Input
           label="Importe"
-          value={clientData.importe}
-          id="comprobanteImporte"
+          value={data.importe}
+          name="comprobante_importe"
         ></Input>
       </SectionGroup>
       <SectionGroup>
         <Input
           label="Carátula"
-          value={clientData.caratula}
-          id="comprobanteCaratula"
+          value={data.caratula}
+          name="comprobante_caratula"
         ></Input>
         <Input
           label="Nombre"
-          value={clientData.nombre}
-          id="comprobanteNombre"
+          value={data.nombre}
+          name="comprobante_nombre"
         ></Input>
       </SectionGroup>
       <SectionGroup>
         <Input
           label="Fecha"
           type="date"
-          value={clientData.fecha}
-          id="comprobanteFecha"
+          value={data.fecha}
+          name="comprobante_fecha"
         ></Input>
         <Select
           options={oficinaClienteOptions}
           label="Oficina Cliente"
-          value={clientData.oficinaCliente}
-          id="comprobanteOficina"
+          value={data.oficinaCliente}
+          name="comprobante_oficina"
         ></Select>
         <Select
           options={origenOptions}
           label="Origen"
-          value={clientData.origen}
-          id="comprobanteOrigen"
+          value={data.origen}
+          name="comprobante_origen"
         ></Select>
         <Input
           label="Fecha de entrevista"
           type="date"
-          value={clientData.fechaEntrevista}
-          id="comprobanteFechaEntrevista"
+          value={data.fechaEntrevista}
+          name="comprobante_fechaEntrevista"
         ></Input>
       </SectionGroup>
     </Section>
   );
-};
-
-export default Comprobante;
+}

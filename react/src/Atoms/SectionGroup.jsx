@@ -1,6 +1,3 @@
-
-const SectionGroup = (props) => {
-  return <li className="flex gap-1">{props.children}</li>;
-};
-
-export default SectionGroup;
+export default function SectionGroup(props) {
+  return <li className="flex gap-1 justify-center">{props.children}</li>;
+}

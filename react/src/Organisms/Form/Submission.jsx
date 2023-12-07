@@ -1,37 +1,29 @@
-import Button from "react-bootstrap/Button";
+import Button from "../../Atoms/Button";
 import Section from "../../Atoms/Section";
 import SectionGroup from "../../Atoms/SectionGroup";
-import TextArea from "../../Atoms/TextArea";
+import Input from "../../Atoms/Input";
 
-const Submission = () => {
+export default function Submission({ data }) {
   return (
     <Section title="Generador">
       <SectionGroup>
-        <Button size="lg">Generar Todos</Button>
-        <Button size="lg" variant="outline-primary">
-          Generar Contrato
-        </Button>
-        <Button size="lg" variant="outline-primary">
-          Generar Demanda
-        </Button>
-        <Button size="lg" variant="outline-primary">
-          Generar Escritos
-        </Button>
-        <Button size="lg" variant="outline-primary">
-          Generar Recibo
-        </Button>
-        <Button size="lg" variant="outline-primary">
-          Generar Excel
-        </Button>
-        <Button size="lg" variant="success">
-          Guardar
-        </Button>
+        <Button>Todos</Button>
+        <Button type={"submit"}>Guardar</Button>
+        <Button secondary>Contrato</Button>
+        <Button secondary>Demanda</Button>
+        <Button secondary>Escritos</Button>
+        <Button secondary>Recibo</Button>
+        <Button secondary>Excel</Button>
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Notas"></TextArea>
+        <Input
+          label="Notas"
+          value={data.notas}
+          name="submission_notas"
+          multiline
+          rows={4}
+        ></Input>
       </SectionGroup>
     </Section>
   );
-};
-
-export default Submission;
+}

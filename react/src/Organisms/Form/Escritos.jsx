@@ -1,10 +1,9 @@
 import SectionGroup from "../../Atoms/SectionGroup";
 import Section from "../../Atoms/Section";
-import TextArea from "../../Atoms/TextArea";
 import Input from "../../Atoms/Input";
 import Select from "../../Atoms/Select";
 
-const Escritos = (props) => {
+export default function Escritos({ data }) {
   const propuestaBienesOptions = [
     {
       label:
@@ -25,38 +24,66 @@ const Escritos = (props) => {
     { label: "CABA", value: "caba" },
   ];
 
-  const clientData = props.data;
-
   return (
     <Section title="Escritos">
       <SectionGroup>
-        <TextArea label="Alimentos" checkbox></TextArea>
-        <Input label="Alimentos" name="escritos_alimentos" multiline />
+        <Input
+          label="Alimentos"
+          value={data.alimentos}
+          name="escritos_alimentos"
+          multiline
+          checkbox
+        />
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Comunicación" checkbox></TextArea>
+        <Input
+          label="Comunicación"
+          value={data.comunicacion}
+          name="escritos_comunicacion"
+          multiline
+          checkbox
+        />
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Cuidado personal" checkbox></TextArea>
+        <Input
+          label="Cuidado Personal"
+          value={data.cuidadoPersonal}
+          name="escritos_cuidadoPersonal"
+          multiline
+          checkbox
+        />
       </SectionGroup>
       <SectionGroup>
-        <TextArea label="Bienes" value={clientData.bienes} checkbox></TextArea>
+        <Input
+          label="Bienes"
+          value={data.bienes}
+          name="escritos_bienes"
+          multiline
+          checkbox
+        />
       </SectionGroup>
       <SectionGroup>
         <Select
           label="Propuesta de bienes"
           options={propuestaBienesOptions}
-        ></Select>
+          value={data.propuestaBienes}
+          name="escritos_propuestaBienes"
+        />
       </SectionGroup>
       <SectionGroup>
         <Select
           label="Atribución vivienda conyugal"
           options={atribucionViviendaOptions}
-        ></Select>
-        <Select label="Matrícula" options={matriculaOptions}></Select>
+          value={data.atribucionVivienda}
+          name="escritos_atribucionVivienda"
+        />
+        <Select
+          label="Matrícula"
+          options={matriculaOptions}
+          value={data.matricula}
+          name="escritos_matricula"
+        />
       </SectionGroup>
     </Section>
   );
-};
-
-export default Escritos;
+}

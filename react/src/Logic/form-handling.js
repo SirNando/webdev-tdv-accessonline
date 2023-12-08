@@ -47,4 +47,24 @@ async function createClient(formData) {
   }
 }
 
-export { extractFormData, createClient };
+async function getClient(id) {
+  let response;
+
+  try {
+    response = await fetch(`http://localhost:3000/accessOnline/client/${id}`, {
+      method: "GET",
+    });
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+
+  const responseData = response.json();
+  if (response.ok) {
+    return responseData;
+  } else {
+    return null;
+  }
+}
+
+export { extractFormData, createClient, getClient };

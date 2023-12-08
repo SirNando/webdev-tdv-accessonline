@@ -9,26 +9,26 @@ export default function ParteDemandada({ data, onChange }) {
         <Input
           label="Nombre"
           value={data.nombre}
-          name="demandadoData_nombre"
+          name="demandado_nombre"
           onChange={onChange}
         ></Input>
         <Input
           label="Apellido"
           value={data.apellido}
-          name="demandadoData_apellido"
+          name="demandado_apellido"
           onChange={onChange}
         ></Input>
         <Input
           label="DNI"
           type="number"
           value={data.documento}
-          name="demandadoData_documento"
+          name="demandado_documento"
           onChange={onChange}
         ></Input>
         <Input
           label="Nacionalidad"
           value={data.nacionalidad}
-          name="demandadoData_nacionalidad"
+          name="demandado_nacionalidad"
           onChange={onChange}
         ></Input>
       </SectionGroup>
@@ -36,7 +36,7 @@ export default function ParteDemandada({ data, onChange }) {
         <Input
           label="Domicilio"
           value={data.domicilio}
-          name="demandadoData_domicilio"
+          name="demandado_domicilio"
           onChange={onChange}
         ></Input>
       </SectionGroup>
@@ -44,19 +44,19 @@ export default function ParteDemandada({ data, onChange }) {
         <Input
           label="Localidad"
           value={data.localidad}
-          name="demandadoData_localidad"
+          name="demandado_localidad"
           onChange={onChange}
         ></Input>
         <Input
           label="Partido"
           value={data.partido}
-          name="demandadoData_partido"
+          name="demandado_partido"
           onChange={onChange}
         ></Input>
         <Input
           label="Provincia"
           value={data.provincia}
-          name="demandadoData_provincia"
+          name="demandado_provincia"
           onChange={onChange}
         ></Input>
       </SectionGroup>
@@ -64,7 +64,7 @@ export default function ParteDemandada({ data, onChange }) {
         <Input
           label="Entrecalle"
           value={data.entrecalle}
-          name="demandadoData_entrecalle"
+          name="demandado_entrecalle"
           onChange={onChange}
         ></Input>
       </SectionGroup>
@@ -73,27 +73,27 @@ export default function ParteDemandada({ data, onChange }) {
           label="Codigo de país"
           type="number"
           value={data.codigoPais}
-          name="demandadoData_codigoPais"
+          name="demandado_codigoPais"
           onChange={onChange}
         ></Input>
         <Input
           label="Código de área"
           type="number"
           value={data.codigoArea}
-          name="demandadoData_codigoArea"
+          name="demandado_codigoArea"
           onChange={onChange}
         ></Input>
         <Input
           label="Teléfono"
           type="number"
           value={data.telefono}
-          name="demandadoData_telefono"
+          name="demandado_telefono"
           onChange={onChange}
         ></Input>
         <Input
           label="Fijo"
           value={data.telefonoFijo}
-          name="demandadoData_telefonoFijo"
+          name="demandado_telefonoFijo"
           onChange={onChange}
         ></Input>
       </SectionGroup>

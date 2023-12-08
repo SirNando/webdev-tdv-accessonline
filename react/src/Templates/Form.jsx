@@ -5,7 +5,7 @@ import DatosDelMatrimonio from "../Organisms/Form/DatosMatrimonio";
 import Honorarios from "../Organisms/Form/Honorarios";
 import Comprobante from "../Organisms/Form/Comprobante";
 import Submission from "../Organisms/Form/Submission";
-import extractFormData from "../Logic/form-handling";
+import { extractFormData, createClient } from "../Logic/form-handling";
 
 export default function Form({ isNewClient }) {
   let clientData = {
@@ -19,7 +19,7 @@ export default function Form({ isNewClient }) {
     submission: {},
   };
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const form = event.target;
@@ -29,7 +29,13 @@ export default function Form({ isNewClient }) {
 
     // Update clientData state to reflect the submitted contents of the form
     clientData = extractedData;
-    console.log(clientData);
+
+    let result = createClient(clientData);
+    if (!result) {
+      console.error("There was a problem with the request");
+    } else {
+      console.log("Success!");
+    }
   }
 
   return (

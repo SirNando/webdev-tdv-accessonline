@@ -1,5 +1,5 @@
 function extractFormData(formData) {
-    const formDataObject = {};
+  const formDataObject = {};
   formData.forEach((value, key) => {
     const [section, fieldName] = key.split("_");
 
@@ -24,4 +24,27 @@ function extractFormData(formData) {
   return formDataObject;
 }
 
-export default extractFormData
+async function createClient(formData) {
+  let response;
+
+  try {
+    response = await fetch("http://localhost:3000/accessOnline/client/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+
+  if (response.ok) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export { extractFormData, createClient };
